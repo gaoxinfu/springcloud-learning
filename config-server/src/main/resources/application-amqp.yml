@@ -19,7 +19,8 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://wolf:abc123@localhost:8003/eureka/
+      defaultZone: http://localhost:8001/eureka/
+#      defaultZone: http://wolf:abc123@localhost:8001/eureka/
 management:
   endpoints: #暴露bus刷新配置的端点
     web:
