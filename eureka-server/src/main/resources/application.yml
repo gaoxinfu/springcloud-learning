@@ -1,13 +1,23 @@
 server:
-  port: 8001 #指定运行端口
+  port: 8003 #指定运行端口
 spring:
   application:
     name: eureka-server #指定服务名称
+  # 安全认证的配置
+  security:
+    basic:
+      enabled: true
+    user:
+      name: wolf  # 用户名
+      password: abc123   # 用户密码
 eureka:
-  instance:
-    hostname: localhost #指定主机地址
+#  instance:
+#    hostname: localhost #指定主机地址 加上这个配置 eureka客户端注册不了 搞了半天时间 哎
   client:
     fetch-registry: false #指定是否要从注册中心获取服务（注册中心不需要开启）
     register-with-eureka: false #指定是否要注册到注册中心（注册中心不需要开启）
+    service-url:
+      defaultZone: http://localhost:8003/eureka
   server:
     enable-self-preservation: false #关闭保护模式
+
