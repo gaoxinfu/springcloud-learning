@@ -1,0 +1,12 @@
+hystrix:
+  command:
+    HystrixComandKey: #将default换成HystrixComrnandKey
+      execution:
+        isolation:
+          strategy: THREAD
+  collapser:
+    HystrixCollapserKey: #将default换成HystrixCollapserKey
+      maxRequestsInBatch: 100
+  threadpool:
+    HystrixThreadPoolKey: #将default换成HystrixThreadPoolKey
+      coreSize: 10
